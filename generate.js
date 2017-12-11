@@ -9,8 +9,14 @@ module.exports = function(){
                 name: faker.name.findName(),
                 avatar: faker.internet.avatar(),
                 email: faker.internet.email(),
-                product: faker.commerce.productName(),
-                price: faker.commerce.price()
+                product: _.times(5,function(n){
+                    return {
+                        name: faker.lorem.word(),
+                        description: faker.lorem.sentence()
+                    }
+                }),
+                price: faker.commerce.price(),
+                image: faker.image.business()
             }
         })
     }
